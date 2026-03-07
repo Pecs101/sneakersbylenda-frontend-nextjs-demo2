@@ -1,14 +1,16 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { Heart, ShoppingCart, Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Heart, ShoppingCart, Star, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import { PRODUCTS } from '../data/products';
 
 export default function NewArrivals() {
   const { t } = useTranslation();
   const { addToCart } = useCart();
+  const { openAuthModal } = useAuth();
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const containerRef = React.useRef(null);
   
@@ -103,8 +105,11 @@ export default function NewArrivals() {
                     referrerPolicy="no-referrer"
                   />
                 </Link>
-                <div className="absolute top-4 right-4 flex flex-col space-y-2 translate-x-12 group-hover:translate-x-0 transition-transform duration-300">
-                  <button className="p-3 bg-white text-slate-900 rounded-full shadow-lg hover:bg-brand hover:text-white transition-colors">
+                <div className="absolute top-4 right-4 flex flex-col space-y-2 transition-transform duration-300">
+                  <button 
+                    onClick={openAuthModal}
+                    className="p-3 bg-white text-slate-900 rounded-full shadow-lg hover:bg-brand hover:text-white transition-colors"
+                  >
                     <Heart size={18} />
                   </button>
                   <button 
@@ -112,6 +117,12 @@ export default function NewArrivals() {
                     className="p-3 bg-white text-slate-900 rounded-full shadow-lg hover:bg-brand hover:text-white transition-colors"
                   >
                     <ShoppingCart size={18} />
+                  </button>
+                  <button 
+                    onClick={openAuthModal}
+                    className="p-3 bg-slate-900 text-white rounded-full shadow-lg hover:bg-brand transition-colors flex items-center justify-center"
+                  >
+                    <Zap size={18} />
                   </button>
                 </div>
                 <div className="absolute bottom-4 left-4">

@@ -67,6 +67,32 @@ export default function Footer() {
             </form>
           </div>
         </div>
+{/* Payment Methods Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12 py-8 border-t border-white/10">
+          <span className="text-white text-sm font-bold uppercase tracking-widest">Metodo de Pagamento</span> 
+          <div className="flex flex-wrap justify-center gap-6">
+            <img 
+              src="/src/img/vinti4.webp" 
+              alt="vinti4" 
+              className="h-6 md:h-8 w-auto grayscale hover:grayscale-0 transition-all"
+            />
+            <img 
+              src="/src/img/visa-secure_blu_2021_dkbg.webp" 
+              alt="Visa Secure" 
+              className="h-6 md:h-8 w-auto grayscale hover:grayscale-0 transition-all"
+            />
+            <img 
+              src="/src/img/mc_idcheck_hrz_rgb_rev.webp" 
+              alt="Mastercard ID Check" 
+              className="h-6 md:h-8 w-auto grayscale hover:grayscale-0 transition-all"
+            />
+            <img 
+              src="/src/img/amex_SK_logo_full.webp" 
+              alt="American Express SafeKey" 
+              className="h-6 md:h-8 w-auto grayscale hover:grayscale-0 transition-all"
+            /> 
+          </div>
+        </div>
 
         <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm">
           <p>© 2026 SNEAKERS by l3nda. {t('footer.rights')}</p>

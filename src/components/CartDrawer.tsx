@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { X, ShoppingBag, Trash2, Plus, Minus } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -12,6 +13,7 @@ interface CartDrawerProps {
 export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
   const { t } = useTranslation();
   const { cart, removeFromCart, updateQuantity, totalPrice, totalItems } = useCart();
+  const { openAuthModal } = useAuth();
 
   return (
     <AnimatePresence>
@@ -112,7 +114,10 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
                   <span className="font-display font-bold text-2xl">${totalPrice.toFixed(2)}</span>
                 </div>
                 <p className="text-xs text-slate-400 text-center">{t('cart.checkout_info')}</p>
-                <button className="w-full bg-slate-900 text-white py-5 rounded-2xl font-bold text-lg hover:bg-slate-800 transition-all shadow-lg shadow-slate-200">
+                <button 
+                  onClick={openAuthModal}
+                  className="w-full bg-slate-900 text-white py-5 rounded-2xl font-bold text-lg hover:bg-slate-800 transition-all shadow-lg shadow-slate-200"
+                >
                   {t('cart.checkout_btn')}
                 </button>
               </div>

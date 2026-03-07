@@ -11,6 +11,7 @@ const resources = {
         vault: 'Vault',
         contact: 'Contact',
         shop_now: 'Shop Now',
+        buy_now: 'Buy Now',
         view_all: 'View All'
       },
       sneakers_page: {
@@ -143,6 +144,21 @@ const resources = {
         subtitle: 'Join the community at our upcoming meetups, conventions, and exclusive drop events across the globe.',
         view_calendar: 'VIEW CALENDAR'
       },
+      faq: {
+        support: 'Support',
+        title: 'FREQUENTLY ASKED QUESTIONS',
+        subtitle: 'Everything you need to know about our products and services.',
+        q1: 'How can I track my order?',
+        a1: 'Once your order ships, you will receive an email with a tracking number and a link to track your package in real-time.',
+        q2: 'What is your return policy?',
+        a2: 'We offer a 30-day return policy for unworn sneakers in their original packaging. Returns are free for all domestic orders.',
+        q3: 'Are the sneakers authentic?',
+        a3: 'Absolutely. Every pair of sneakers sold on our platform undergoes a rigorous multi-point authentication process by our expert team.',
+        q4: 'Do you ship internationally?',
+        a4: 'Yes, we ship to over 100 countries worldwide. Shipping costs and delivery times vary depending on the destination.',
+        q5: 'How do I know my size?',
+        a5: 'We provide a detailed size guide on every product page. We recommend checking the specific brand size chart as fit can vary between manufacturers.'
+      },
       hero: {
         slide1: {
           title: 'BE\nLEGEND',
@@ -194,6 +210,7 @@ const resources = {
         vault: 'Baú',
         contact: 'Contacto',
         shop_now: 'Comprar Agora',
+        buy_now: 'Comprar Já',
         view_all: 'Ver Tudo'
       },
       sneakers_page: {
@@ -325,6 +342,21 @@ const resources = {
         title: 'EVENTOS DE SAPATILHAS',
         subtitle: 'Junte-se à comunidade nos nossos próximos encontros, convenções e eventos de lançamento exclusivos em todo o mundo.',
         view_calendar: 'VER CALENDÁRIO'
+      },
+      faq: {
+        support: 'Suporte',
+        title: 'PERGUNTAS FREQUENTES',
+        subtitle: 'Tudo o que precisa de saber sobre os nossos produtos e serviços.',
+        q1: 'Como posso rastrear a minha encomenda?',
+        a1: 'Assim que a sua encomenda for enviada, receberá um e-mail com um número de rastreio e um link para acompanhar o seu pacote em tempo real.',
+        q2: 'Qual é a vossa política de devolução?',
+        a2: 'Oferecemos uma política de devolução de 30 dias para sapatilhas não usadas na sua embalagem original. As devoluções são gratuitas para todas as encomendas nacionais.',
+        q3: 'As sapatilhas são autênticas?',
+        a3: 'Absolutamente. Cada par de sapatilhas vendido na nossa plataforma passa por um rigoroso processo de autenticação de vários pontos pela nossa equipa de especialistas.',
+        q4: 'Enviam internacionalmente?',
+        a4: 'Sim, enviamos para mais de 100 países em todo o mundo. Os custos de envio e os tempos de entrega variam dependendo do destino.',
+        q5: 'Como sei o meu tamanho?',
+        a5: 'Fornecemos um guia de tamanhos detalhado em cada página de produto. Recomendamos verificar a tabela de tamanhos específica da marca, pois o ajuste pode variar entre fabricantes.'
       },
       hero: {
         slide1: {

@@ -3,11 +3,13 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Star, Heart, ShoppingCart, ArrowLeft, Plus, Minus, ShieldCheck, Truck, RefreshCw } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import { TSHIRTS } from '../data/tshirts';
 
 export default function ApparelDetail() {
   const { id } = useParams();
   const { addToCart } = useCart();
+  const { openAuthModal } = useAuth();
   const [quantity, setQuantity] = React.useState(1);
   const [selectedSize, setSelectedSize] = React.useState<string | null>(null);
   const [selectedColor, setSelectedColor] = React.useState<string | null>(null);
@@ -53,7 +55,10 @@ export default function ApparelDetail() {
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
-            <button className="absolute top-4 right-4 sm:top-8 sm:right-8 p-3 sm:p-4 bg-white rounded-full shadow-lg hover:bg-brand hover:text-white transition-colors">
+            <button 
+              onClick={openAuthModal}
+              className="absolute top-4 right-4 sm:top-8 sm:right-8 p-3 sm:p-4 bg-white rounded-full shadow-lg hover:bg-brand hover:text-white transition-colors"
+            >
               <Heart size={20} className="sm:w-6 sm:h-6" />
             </button>
           </motion.div>

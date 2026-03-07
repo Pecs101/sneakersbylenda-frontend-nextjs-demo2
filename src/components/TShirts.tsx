@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { ShoppingCart, ArrowRight, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ShoppingCart, ArrowRight, Heart, ChevronLeft, ChevronRight, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 import { TSHIRTS } from '../data/tshirts';
 
 export default function TShirts() {
   const { addToCart } = useCart();
+  const { openAuthModal } = useAuth();
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const containerRef = React.useRef(null);
   
@@ -107,8 +109,11 @@ export default function TShirts() {
                     referrerPolicy="no-referrer"
                   />
                 </Link>
-                <div className="absolute top-6 right-6 flex flex-col space-y-3 translate-x-16 group-hover:translate-x-0 transition-transform duration-500">
-                  <button className="p-4 bg-white rounded-full shadow-lg hover:bg-brand hover:text-white transition-colors">
+                <div className="absolute top-6 right-6 flex flex-col space-y-3 transition-transform duration-500">
+                  <button 
+                    onClick={openAuthModal}
+                    className="p-4 bg-white rounded-full shadow-lg hover:bg-brand hover:text-white transition-colors"
+                  >
                     <Heart size={20} />
                   </button>
                   <button 
@@ -116,6 +121,12 @@ export default function TShirts() {
                     className="p-4 bg-white rounded-full shadow-lg hover:bg-brand hover:text-white transition-colors"
                   >
                     <ShoppingCart size={20} />
+                  </button>
+                  <button 
+                    onClick={openAuthModal}
+                    className="p-4 bg-slate-900 text-white rounded-full shadow-lg hover:bg-brand transition-colors flex items-center justify-center"
+                  >
+                    <Zap size={20} />
                   </button>
                 </div>
                 <div className="absolute bottom-6 left-6">

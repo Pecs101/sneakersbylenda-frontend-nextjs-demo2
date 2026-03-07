@@ -1,10 +1,11 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Filter, X, ChevronDown, Search, ShoppingBag } from 'lucide-react';
+import { Filter, X, ChevronDown, Search, ShoppingBag, Heart, Zap } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { PRODUCTS, Product } from '../data/products';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
+import { useAuth } from '../context/AuthContext';
 
 const CATEGORIES = ['All', 'Lifestyle', 'Running', 'Basketball', 'Skateboarding'];
 const BRANDS = ['All', 'Nike', 'Adidas', 'New Balance', 'Vans', 'Jordan', 'Converse'];
@@ -12,6 +13,7 @@ const BRANDS = ['All', 'Nike', 'Adidas', 'New Balance', 'Vans', 'Jordan', 'Conve
 export default function SneakersPage() {
   const { t } = useTranslation();
   const { addToCart } = useCart();
+  const { openAuthModal } = useAuth();
 
   const PRICE_RANGES = [
     { label: t('price_ranges.all'), min: 0, max: 1000, id: 'all' },
@@ -193,18 +195,32 @@ export default function SneakersPage() {
                           referrerPolicy="no-referrer"
                         />
                       </Link>
-                      <button 
-                        onClick={() => addToCart({
-                          id: parseInt(product.id),
-                          name: product.name,
-                          price: product.price,
-                          img: product.img,
-                          quantity: 1
-                        })}
-                        className="absolute bottom-4 right-4 w-12 h-12 bg-white rounded-2xl flex items-center justify-center shadow-lg translate-y-12 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hover:bg-brand hover:text-white"
-                      >
-                        <ShoppingBag size={20} />
-                      </button>
+                      <div className="absolute top-4 right-4 flex flex-col space-y-2 transition-transform duration-300">
+                        <button 
+                          onClick={openAuthModal}
+                          className="p-3 bg-white text-slate-900 rounded-full shadow-lg hover:bg-brand hover:text-white transition-colors"
+                        >
+                          <Heart size={18} />
+                        </button>
+                        <button 
+                          onClick={() => addToCart({
+                            id: parseInt(product.id),
+                            name: product.name,
+                            price: product.price,
+                            img: product.img,
+                            quantity: 1
+                          })}
+                          className="p-3 bg-white text-slate-900 rounded-full shadow-lg hover:bg-brand hover:text-white transition-colors"
+                        >
+                          <ShoppingBag size={18} />
+                        </button>
+                        <button 
+                          onClick={openAuthModal}
+                          className="p-3 bg-slate-900 text-white rounded-full shadow-lg hover:bg-brand transition-colors flex items-center justify-center"
+                        >
+                          <Zap size={18} />
+                        </button>
+                      </div>
                       <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">
                         {product.brand}
                       </div>

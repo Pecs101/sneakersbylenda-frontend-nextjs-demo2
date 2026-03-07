@@ -33,7 +33,7 @@ export default function Hero() {
       brand: 'NB',
       title: t('hero.slide3.title'),
       subtitle: t('hero.slide3.subtitle'),
-      img: 'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&q=80&w=1200',
+      img: 'https://images.unsplash.com/photo-1543508282-6319a3e2621f?q=80&w=1015&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
       color: '#8E8E93'
     }
   ];
@@ -76,8 +76,8 @@ export default function Hero() {
       </AnimatePresence>
 
       {/* Main Content */}
-      <div className="relative z-10 h-full w-full flex items-center pt-16 lg:pt-0">
-        <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="relative z-10 h-full w-full flex items-center pt-16 pb-48 lg:pt-0 lg:pb-0">
+        <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-12 items-center">
           
           {/* Left Content */}
           <div className="lg:col-span-4 text-slate-900 order-2 lg:order-1">
@@ -90,7 +90,7 @@ export default function Hero() {
                 transition={{ duration: 0.6 }}
                 className="text-center lg:text-left"
               >
-                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[8rem] font-display font-black leading-[0.85] tracking-tighter mb-4 lg:mb-6 whitespace-pre-line">
+                <h1 className="text-3xl sm:text-6xl md:text-7xl lg:text-[8rem] font-display font-black leading-[0.85] tracking-tighter mb-4 lg:mb-6 whitespace-pre-line">
                   {activeSlide.title}
                 </h1>
                 {/* <p className="text-slate-500 max-w-xs sm:max-w-sm mx-auto lg:mx-0 text-xs sm:text-sm md:text-base mb-6 lg:mb-8 leading-relaxed">
@@ -121,7 +121,7 @@ export default function Hero() {
                   damping: 20,
                   duration: 0.8 
                 }}
-                className="relative w-full max-w-[280px] sm:max-w-md lg:max-w-2xl aspect-square flex items-center justify-center"
+                className="relative w-full max-w-[220px] sm:max-w-md lg:max-w-2xl aspect-square flex items-center justify-center"
               >
                 <img 
                   src={activeSlide.img} 
